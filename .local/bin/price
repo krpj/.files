@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Price
+
+[ -z "$3" ] && exit 1
+
+currency="${4:-inr}"
+interval="@14d"
+dir="${XDG_DATA_HOME:-$HOME/.local/share}/prices"
+pricefile="$dir/$1-$currency"
+chartfile="$dir/$1-$currency-chart"
+
+updateprice() { temp="$(mktemp)"
+	curl -s "$currency.rate.sx/1$1" > "$temp" &&
+		mv -f "$temp" "$pricefile" &&
+		curl -s "$currency.rate.sx/$1$interval" > "$temp" &&
+		mv -f "$temp" "$chartfile" ;}
+
+[ -d "$dir" ] || mkdir -p "$dir"
+
+[ "$(stat -c %x "$pricefile" 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] &&
+	updateprice "$1"
+
+case "$currency" in
+	inr) symb="₹" ;;
+	usd) symb="$" ;;
+	gbp) symb="£" ;;
+	eur) symb="€" ;;
+	btc) symb="₿" ;;
+esac
+
+printf "[$3 $symb%0.2f$after]" "$(cat "$pricefile")"

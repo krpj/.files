@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Volume
+
+case $BUTTON in
+	1) setsid -f "$TERMINAL" -e pulsemixer ;;
+	2) pamixer -t ; pkill -SIGRTMIN+10 dwmblocks ;;
+	4) pamixer -i 2 ; pkill -SIGRTMIN+10 dwmblocks ;;
+	5) pamixer -d 2 ; pkill -SIGRTMIN+10 dwmblocks ;;
+esac
+
+[ $(pamixer --get-mute) = true ] && echo 󰝟 && exit
+
+vol="$(pamixer --get-volume)"
+
+if [ "$vol" -gt "70" ]; then
+	icon=""
+elif [ "$vol" -gt "50" ]; then
+	icon="󰕾"
+elif [ "$vol" -gt "30" ]; then
+	icon="󰖀"
+elif [ "$vol" -gt "0" ]; then
+	icon=""
+else
+        echo 󰝟 && exit
+fi
+
+echo "$icon $vol%"

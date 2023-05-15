@@ -1,0 +1,39 @@
+#!/bin/sh
+
+wifirun() { \
+	bssid=$(nmcli device wifi list | sed -n '1!p' | dmenu -p "Select Wifi 📶 :" -l 11 | awk '{print $1}')
+	pass=$(printf "" | dmenu -p "Enter Passphrase 🔑 :")
+	connect=$(nmcli device wifi connect $bssid password $pass | cut -d' ' -f2 | cut -b 2-5)
+	case $connect in
+		wlp0 )
+			notify-send "Connecting🤝...." "You're 🤝Connected To The World🌏...."
+			break;;
+		
+		onne )
+			notify-send -u critical "Wrong Passphrase🔑...."
+			break;;
+		* )
+			notify-send -u critical "Error🛑: 404...."
+			break;;
+	esac
+}
+
+if grep -xq 'up' /sys/class/net/w*/operstate 2>/dev/null
+then
+	notify-send "You're Already 🤝Connected To The World🌏...."
+	opt=$(printf "" | dmenu -p "Want To Switch♻ Network (y/n):")
+	case $opt in
+		[yY][eE][sS]|[yY] )
+			wifirun
+			break;;
+		[nN][oO]|[nN] )
+			exit 1
+			break;;
+		* )
+			notify-send -u critical "Sorry, Option ❌Not Available...."
+			break;;
+	esac
+elif grep -xq 'down' /sys/class/net/w*/operstate 2>/dev/null
+then
+	wifirun
+fi

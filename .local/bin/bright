@@ -1,0 +1,7 @@
+#!/bin/sh
+
+bright=$(expr $(cat /sys/class/backlight/intel_backlight/brightness) / 1200)
+
+echo "[💡 $bright%]"
+
+

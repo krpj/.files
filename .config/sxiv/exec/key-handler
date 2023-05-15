@@ -1,0 +1,11 @@
+#!/bin/sh
+
+while read file
+do
+  case "$1" in
+    "d") rm -rf "$file"
+		break;;
+    "B") setwp "$file"
+		break;;
+  esac 
+done

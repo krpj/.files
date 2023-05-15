@@ -1,0 +1,90 @@
+sw_volume: 100
+audio_device_state:1:Alsa for audio sound card
+audio_device_state:1:toggle_visualizer
+state: play
+current: 64
+time: 79.613000
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:inglsh/Mr. ROBOT - Original Soundtrack.mp3
+1:inglsh/Faded_320(PaglaSongs).mp3
+2:inglsh/H4CK3R5 — Energetic.mp3
+3:n4dh4/Akasha.mp3
+4:n4dh4/Amla_Yoga Padhi_Sadhguru.mp3
+5:n4dh4/Bloom_Yoga Padhi_Sadhguru.mp3
+6:n4dh4/Desh_Yoga Padhi_Sadhguru.mp3
+7:n4dh4/Dwirupi.mp3
+8:n4dh4/Kaalo Na Jaanati_7-Times_Sadhguru.mp3
+9:n4dh4/Kamala Pushpa.mp3
+10:n4dh4/Nada Aradhana - #Guitar and #Voilin _ Meditative Music _ Dhyanlinga.mp3
+11:n4dh4/Nada Aradhana - Bansuri _ Meditative Music _ Flute Music _ Dhayanlinga.mp3
+12:n4dh4/Nada Aradhana - Bansuri (December 2018).mp3
+13:n4dh4/Nada Aradhana - Carnatic Classical Music (Male).mp3
+14:n4dh4/Nada Aradhana - Carnatic Classical Veena _ Meditative Music _ Dhyanalinga.mp3
+15:n4dh4/Nada Aradhana - Carnatic Classical Violin (August 2018, Week 2).mp3
+16:n4dh4/Nada Aradhana - Carnatic Classical Vocal (August 2018).mp3
+17:n4dh4/Nada Aradhana - Carnatic Classical Vocal (Male).mp3
+18:n4dh4/Nada Aradhana - Carnatic Classical Vocal (May 2018).mp3
+19:n4dh4/Nada Aradhana - Carnatic Classical Vocal (September 2018).mp3
+20:n4dh4/Nada Aradhana - Carnatic Classical Vocal and Guitar.mp3
+21:n4dh4/Nada Aradhana - Carnatic Classical Vocal.mp3
+22:n4dh4/Nada Aradhana - Carnatic Violin Instrumental.mp3
+23:n4dh4/Nada Aradhana - Clarinet.mp3
+24:n4dh4/Nada Aradhana - Flute Raas.mp3
+25:n4dh4/Nada Aradhana - Guitar and Flute.mp3
+26:n4dh4/Nada Aradhana - Guitar and Vocal (Female) - 1 _ Meditative Music _ Dhyanalinga.mp3
+27:n4dh4/Nada Aradhana - Guitar and Vocals (November 2018).mp3
+28:n4dh4/Nada Aradhana - Handpan and Guitar.mp3
+29:n4dh4/Nada Aradhana - Handpan, Guitar and Vocal.mp3
+30:n4dh4/Nada Aradhana - Hindustani Classical _ Sitar Instrumental (December).mp3
+31:n4dh4/Nada Aradhana - Hindustani Classical Bansuri (June 2018).mp3
+32:n4dh4/Nada Aradhana - Hindustani Classical Bansuri.mp3
+33:n4dh4/Nada Aradhana - Hindustani Classical Vocal _ Meditative Music _ Dhyanalinga.mp3
+34:n4dh4/Nada Aradhana - Hindustani Classical Vocal (Feb 2018).mp3
+35:n4dh4/Nada Aradhana - Hindustani Classical Vocal (Female - September 2018).mp3
+36:n4dh4/Nada Aradhana - Hindustani Classical Vocal (Female, November 2018).mp3
+37:n4dh4/Nada Aradhana - Hindustani Classical Vocal (June 2017).mp3
+38:n4dh4/Nada Aradhana - Hindustani Classical Vocal (June 2018).mp3
+39:n4dh4/Nada Aradhana - Hindustani Classical Vocal (Male, December 2018).mp3
+40:n4dh4/Nada Aradhana - Hindustani Classical Vocal (Male)with Duff.mp3
+41:n4dh4/Nada Aradhana - Hindustani Classical Vocal (October 2018).mp3
+42:n4dh4/Nada Aradhana - Hindustani Vocal.mp3
+43:n4dh4/Nada Aradhana - Sarangi And Vocals.mp3
+44:n4dh4/Nada Aradhana - Saxophone Instrumental.mp3
+45:n4dh4/Nada Aradhana - Shehnai And Guitar.mp3
+46:n4dh4/Nada Aradhana - Shehnai Instrumental.mp3
+47:n4dh4/Nada Aradhana - Sitar (June 2018).mp3
+48:n4dh4/Nada Aradhana - Sitar and Flute instrumental.mp3
+49:n4dh4/Nada Aradhana - Sitar Instrumental.mp3
+50:n4dh4/Nada Aradhana - Sitar.mp3
+51:n4dh4/Nada Aradhana - Swarmandal And Oboe _ Dhyanalinga.mp3
+52:n4dh4/Nada Aradhana - Violin.mp3
+53:n4dh4/Nada Aradhana - Vocal (Female) and Guitar _ Dhyanalinga.mp3
+54:n4dh4/Nada Aradhana - Vocal and Guitar (May 2018).mp3
+55:n4dh4/Nada Aradhana - Vocal and Guitar(September 2018).mp3
+56:n4dh4/Nada Aradhana - Vocal and Percussion.mp3
+57:n4dh4/Nada Aradhana - Vocal, Guitar and Bansuri (August 2018).mp3
+58:n4dh4/Nada Aradhana - Vocal, Guitar and Bansuri (June 2018).mp3
+59:n4dh4/Nada Aradhana - Vocal, Guitar And Bansuri (May 2018).mp3
+60:n4dh4/Nada Aradhana - Vocal, Santoor and Bansuri.mp3
+61:n4dh4/Nada Aradhana - Vocals and Duff (May).mp3
+62:n4dh4/Nada Aradhana - Vocals and Guitar (Jan 2018).mp3
+63:n4dh4/Nada Aradhana - Vocals and Guitar (July, Week 3).mp3
+64:n4dh4/Nada Aradhana - Vocals, Guitar and Bansuri (Dec 2017).mp3
+65:n4dh4/Nada Aradhana - Vocals, Guitar and Duff.mp3
+66:n4dh4/Nada-Aradhana-Guitar-&-Vocal-Female.mp3
+67:n4dh4/Nada-Aradhana-Guitar-and-Vocal-Female.mp3
+68:n4dh4/Nada-Aradhana-Vocal-Guitar-and-Bansuri.mp3
+69:n4dh4/Singing Bowls.mp3
+70:n4dh4/Chandrama_Sounds Of Isha.mp3
+71:n4dh4/Dance Of The Dunes_Sounds Of Isha.mp3
+72:n4dh4/Nada-Aradhana-Shehnai-and-Guitar-Meditative-Music-Sound.mp3
+73:n4dh4/Nada-Aradhana-Vocals-and-Percussion-August-2017-Meditative-music-Sound.mp3
+74:n4dh4/Nadha-Aradhana-Clarinet.mp3
+playlist_end

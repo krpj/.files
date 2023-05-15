@@ -1,0 +1,9 @@
+#!/bin/sh
+
+pkg=$1
+
+git clone https://aur.archlinux.org/$pkg $HOME/.cache/pacaur/src/$pkg
+cd $HOME/.cache/pacaur/src/$pkg
+makepkg -si
+rm -rf $HOME/.cache/pacaur/src/$pkg
+cd $HOME/

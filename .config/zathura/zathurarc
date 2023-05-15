@@ -1,0 +1,6 @@
+set recolor "true"
+
+set font "Fira Code 8"
+
+# Keybinds
+map <C-i> recolor

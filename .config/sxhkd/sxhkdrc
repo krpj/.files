@@ -1,0 +1,22 @@
+# Extra Key Configs
+
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	pamixer -{i,d,t} 2; pkill -SIGRTMIN+10 dwmblocks
+
+XF86Audio{Prev,Next}
+	mpc {seek -10,seek +10};
+
+XF86Audio{Play,Pause}
+	mpc toggle; pkill -SIGRTMIN+11 dwmblocks
+
+XF86Search
+	dmenu_run
+
+XF86MonBrightness{Up,Down}
+	brightnessctl s {+2%,2%-}
+
+super + Escape
+	system
+
+super + Print
+	maim -m 2 | tee ~/pics/shots/$(date +%s).jpg | xclip -sel c -t image/jpg

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Date & Time
+
+case $BUTTON in
+	1) notify-send "$(date)" ;;
+	3) notify-send "$(cal)" ;;
+esac
+
+date "+%R"

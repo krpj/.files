@@ -1,0 +1,98 @@
+#!/bin/sh
+
+version="0.0.1"
+
+walldir="$HOME/pics/save"
+cachedir="$HOME/.cache/wallhaven"
+sxiv_otps=" -tfpo -z 200"
+max_pages=4
+sorting=relevance
+quality=large
+atleast=1920x1080
+
+[ -e "$HOME/.config/waldlrc" ] && . "$HOME/.config/waldlrc"
+
+sh_menu () {
+	: | dmenu -p "Search Wallhaven :"
+}
+
+[ -n "$*" ] && query="$*" || query=$( sh_menu )
+[ -z "$query" ] && exit 1
+query=$(printf '%s' "$query" | tr ' ' '+' )
+
+rm -rf "$cachedir"
+mkdir -p "$walldir" "$cachedir"
+
+sh_info () {
+	printf "%s\n" "$1" >&2
+	notify-send "wallhaven" "$1"
+	[ -n "$2" ] && exit "$2"
+}
+
+dep_ck () {
+	for pr; do
+		command -v $pr >/dev/null 2>&1 || sh_info "command $pr not found, install: $pr" 1
+	done
+}
+dep_ck "sxiv" "curl" "jq"
+
+clean_up () {
+	printf "%s\n" "Cleaning Up...." >&2
+	rm -rf "$datafile" "$cachedir"
+}
+
+datafile="/tmp/wald.$$"
+
+trap "exit" INT TERM
+trap "clean_up" EXIT
+
+get_results () {
+	for page_no in $(seq $max_pages)
+	do
+		{
+			json=$(curl -s -G "https://wallhaven.cc/api/v1/search" \
+					-d "q=$1" \
+					-d "page=$page_no" \
+					-d "atleast=$atleast" \
+					-d "sorting=$sorting"
+				)
+			printf "%s\n" "$json" >> "$datafile"
+		} &
+		sleep 0.001
+	done
+	wait
+}
+
+sh_info "Getting Data..."
+get_results "$query"
+
+[ -s "$datafile" ] || sh_info "no images found" 1 
+
+thumbnails=$( jq -r '.data[]?|.thumbs.'"$quality" < "$datafile")
+
+[ -z "$thumbnails" ] && sh_info "no-results found" 1
+
+sh_info "Caching Thumbnails...."
+for url in $thumbnails
+do
+		printf "url = %s\n" "$url"
+		printf "output = %s\n" "$cachedir/${url##*/}"
+done | curl -Z -K -
+sh_info "Downloaded Thumbnails...."
+
+image_ids="$(sxiv $sxiv_otps "$cachedir")"
+[ -z "$image_ids" ] && exit
+
+cd "$walldir"
+sh_info "Downloading Wallpapers...."
+for ids in $image_ids
+do
+	ids="${ids##*/}"
+	ids="${ids%.*}"
+	url=$( jq -r '.data[]?|select( .id == "'$ids'" )|.path' < "$datafile" )
+	printf "url = %s\n" "$url"
+	printf -- "-O\n"
+done | curl -K -
+
+sh_info "Wallpapers Downloaded In :-  '$walldir'"
+#sxiv $(ls -c)

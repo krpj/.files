@@ -1,0 +1,12 @@
+#!/bin/sh
+
+mtpfs=$(jmtpfs -l | sed -n '1,2!p' | dmenu -i -l 11 | cut -b 1-5 | sed 's/ //g')
+
+if [ "$mtpfs" ">" "$,$" ]
+then
+	jmtpfs -device=$mtpfs ~/kr-pk/cell/>/dev/null
+	mtpdev=$(jmtpfs -l | sed -n '2,3!p' | cut -b 39-)
+	notify-send "Hey, You're 🤝Connected To Your 🤖Android Device $mtpdev...."
+else
+	notify-send -u critical "Device ❎Not Selected...."
+fi

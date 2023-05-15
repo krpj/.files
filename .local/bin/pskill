@@ -1,0 +1,11 @@
+#!/bin/sh
+
+pid=$(ps -u $USER -o pid,%mem,%cpu,comm | sort -b -k2 -r | sed -n '1!p' | dmenu -i -l 11 | awk '{print $1}')
+
+if [ "$pid" ">" "0" ]
+then
+	kill -9 $pid 2>/dev/null
+	notify-send -u critical "Process ❌Killed...."
+else
+	notify-send "Process Not ✔️ Selected...."
+fi

@@ -1,6 +1,0 @@
-#!/bin/sh
-
-sleep 5
-pkill -SIGRTMIN+10 dwmblocks &
-pkill -SIGRTMIN+11 dwmblocks &
-xautolock -time 10 -locker slock &

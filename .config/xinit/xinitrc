@@ -11,9 +11,9 @@ xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 unclutter --timeout 5 &
 dwmblocks &
 $HOME/.local/bin/setwp &
-$HOME/.local/bin/boot &
 dunst &
 sxhkd &
+xautolock -time 10 -locker slock &
 
 #Starts MPD
 mpd &

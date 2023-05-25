@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sliderun() { \
+	setwp
+	sleep 600
+	sliderun
+}
+sliderun

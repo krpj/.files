@@ -6,17 +6,12 @@ setxkbmap us &
 #Turns Numlock Key On
 xdotool key Num_Lock &
 
-#Screen Resolution
-#xrandr -s 1280x768 &
-
-#Play Startup Sound
-paplay $HOME/musc/tuns/you_suffer.wav &
-
 #Startup Processes
 xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 unclutter --timeout 5 &
 dwmblocks &
 $HOME/.local/bin/setwp &
+$HOME/.local/bin/boot &
 dunst &
 sxhkd &
 

@@ -9,6 +9,7 @@ filetype on
 :set softtabstop=4
 :set incsearch
 :set wildmenu
+:set guicursor=v-c-sm:block,n-i-ci-ve:ver25,r-cr-o:hor20
 
 "***
 "** Last Position

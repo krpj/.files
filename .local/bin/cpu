@@ -1,10 +1,5 @@
 #!/bin/sh
 
-case $BUTTON in
-	1) notify-send "🖥 CPU Usage" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)\\n(100% per core)" ;;
-	2) setsid -f "$TERMINAL" -e btop ;;
-esac
-
 cpu=$(sensors | awk '/Core 0/ {print $3}')
 
 echo " $cpu"

@@ -2,13 +2,6 @@
 
 # Volume
 
-case $BUTTON in
-	1) setsid -f "$TERMINAL" -e pulsemixer ;;
-	2) pamixer -t ; pkill -SIGRTMIN+10 dwmblocks ;;
-	4) pamixer -i 2 ; pkill -SIGRTMIN+10 dwmblocks ;;
-	5) pamixer -d 2 ; pkill -SIGRTMIN+10 dwmblocks ;;
-esac
-
 [ $(pamixer --get-mute) = true ] && echo 󰝟 && exit
 
 vol="$(pamixer --get-volume)"

@@ -8,12 +8,3 @@ then
 else
 	printf "󰐎"
 fi
-
-case $BUTTON in
-	1)
-		xdotool key super+m
-		break;;
-	3)
-		notify-send "Now Playing 🎶" "$(mpc current)"
-		break;;
-esac

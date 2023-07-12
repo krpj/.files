@@ -2,10 +2,6 @@
 
 # Network Speed Monitor
 
-case $BUTTON in
-	1) setsid -f "$TERMINAL" -e bmon ;;
-esac
-
 update() {
     sum=0
     for arg; do

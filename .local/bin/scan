@@ -1,0 +1,50 @@
+#!/bin/sh
+
+
+scan(){ \
+
+    file_name=$(date "+%F_%H-%M-%S")
+    hp-scan -d "hpaio:/usb/HP_LaserJet_Pro_MFP_M126nw?serial=CNBRNDK049" -i -f scan_$file_name.jpg
+
+}
+
+convert_to_pdf(){ \
+
+	working_directory=$(pwd)
+	pdfopt=$(printf "" | dmenu -p "Convert Scanned Images To PDF (y/n):")
+	case $pdfopt in
+        [yY][eE][sS]|[yY] )
+			pdf_name=$(printf "" | dmenu -p "Enter The Name For PDF:")
+            convert *.jpg $working_directory/$pdf_name.pdf
+            break;;
+        [nN][oO]|[nN] )
+            exit 1
+            break;;
+        * )
+            notify-send -u critical "Sorry, Option ❌Not Available...."
+            break;;
+    esac
+
+}
+
+more_scan(){ \
+
+    opt=$(printf "" | dmenu -p "Scan More (y/n):")
+    case $opt in
+        [yY][eE][sS]|[yY] )
+            scan
+			more_scan
+            break;;
+        [nN][oO]|[nN] )
+			convert_to_pdf
+            exit 1
+            break;;
+        * )
+            notify-send -u critical "Sorry, Option ❌Not Available...."
+            break;;
+    esac
+
+}
+
+scan
+more_scan

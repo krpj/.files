@@ -13,7 +13,7 @@
     progress_bar_max_width = 300
     indicate_hidden = yes
     shrink = yes
-    transparency = 20
+    transparency = 34
     separator_height = 2
     padding = 14
     horizontal_padding = 21
@@ -51,10 +51,10 @@
     class = Dunst
     corner_radius = 2
     ignore_dbusclose = false
-    force_xwayland = true
+    force_xwayland = false
     force_xinerama = false
     
-    mouse_left_click = colose_current
+    mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
 
@@ -63,19 +63,19 @@
 
 
 [urgency_low]
-    background = "{foreground}95"
+    background = "{foreground}"
     foreground = "{background}"
     timeout = 10
     default_icon = /home/kr/pics/icons/icon.png
 
 [urgency_normal]
-    background = "{foreground}95"
+    background = "{foreground}"
     foreground = "{background}"
     timeout = 10
     default_icon = /home/kr/pics/icons/icon.png
 
 [urgency_critical]
-    background = "{foreground}95"
+    background = "{foreground}"
     foreground = "#ff0000"
     timeout = 10
     default_icon = /home/kr/pics/icons/icon.png

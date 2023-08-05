@@ -20,3 +20,6 @@ super + Escape
 
 super + Print
 	maim -m 2 | tee ~/pics/shots/$(date +%s).jpg | xclip -sel c -t image/jpg
+
+super + grave
+    st -e cava

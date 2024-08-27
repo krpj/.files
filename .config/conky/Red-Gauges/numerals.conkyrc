@@ -1,0 +1,133 @@
+--[[
+Bleys 2024 
+
+]]
+conky.config = {
+-- — Conky settings
+
+	alignment = 'top_middle',
+	gap_x = -211,
+	gap_y = 273,
+
+	background = false,
+	total_run_times = 0,
+	no_buffers = true,	
+
+-- — Window specifications with Background
+
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_type = 'desktop',
+    own_window_hints ='undecorated,sticky,skip_taskbar,skip_pager,below',
+	
+	double_buffer = true,
+	minimum_width = 700, 
+    minimum_height = 700,
+
+-- Lua Load
+	lua_load = 'numerals.lua',
+    lua_draw_hook_pre = 'conky_main',
+	lua_draw_hook_post = 'main',		
+};
+conky.text = [[
+
+]];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

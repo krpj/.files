@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+cam() { \
+	option=$(echo "1. Low Quality\n2. High Quality" | dmenu -p "Select One:" -l 11 | awk '{print $2}')
+    case $option in
+		[Ll][Oo][Ww] )
+            mpv av://v4l2:/dev/video0 --no-resume-playback --profile=low-latency --untimed
+			break;;
+		[Hh][Ii][Gg][Hh] )
+			mpv --no-resume-playback --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0
+			break;;
+		* )
+			notify-send -u critical "Sorry, Option ❌Not Available...."
+            break;;
+	esac
+}
+
+cam
